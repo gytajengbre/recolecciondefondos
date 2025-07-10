@@ -307,3 +307,27 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 }
+/* Diseño lateral para la sección sobre mí */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+/* Imagen personal */
+.about-photo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Columnas se apilan en móviles */
+@media (max-width: 768px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+}
