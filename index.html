@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco Gil | Portafolio Médico y Profesional</title>
+
+  <!-- Fuentes y estilos externos -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- ENCABEZADO -->
+  <header class="main-header">
+    <h1>Marco Gil</h1>
+    <p>Técnico Superior en Navegación y Pesca</p>
+
+    <!-- Redes sociales + GoFundMe -->
+    <div class="social-media">
+      <a href="https://www.linkedin.com/in/marco-antonio-gil-lopez-5943521b2" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/gytajengbre" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/gllpzmarco" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/qr/FSZ3GLV672YQB1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.gofundme.com/" target="_blank" class="gofundme-icon">
+  <img src="https://cdn.iconscout.com/icon/free/png-512/free-gofundme-3628882-3029990.png" alt="https://gofund.me/a7e0699f">
+  <span>GoFundMe</span>
+</a>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="main-nav">
+    <button onclick="goToSlide(0)" class="highlighted-btn">Donaciones</button>
+    <button onclick="goToSlide(1)">Sobre mí</button>
+    <button onclick="goToSlide(2)">Galería</button>
+    <button onclick="goToSlide(3)">Contacto</button>
+    <button onclick="goToSlide(4)" class="highlighted-btn">Informes Médicos</button>
+  </nav>
+
+  <!-- CARRUSEL -->
+  <main class="carousel" id="carousel">
+
+    <!-- DONACIONES -->
+    <section class="section">
+      <h2 class="highlighted-title">Métodos de Donación</h2>
+      <div class="two-column-grid">
+        <div class="donation-column">
+          <div class="payment-card">
+            <ul><h3><i class="fab fa-bitcoin"></i> Binance</h3>
+            <li><p><strong>Email:</strong> gllpz2699@gmail.com</p>
+            <p><strong>Pay ID:</strong> 40662836</p></li>
+            <li><p><strong>Email:</strong> gil33433@gmail.com</p>
+            <p><strong>Pay ID:</strong> 422709951</p></li>
+          </ul></div>
+          <div class="payment-card">
+            <ul><h3><i class="fas fa-money-bill-transfer"></i> Zelle</h3>
+            <li><p>Joseferminster@gmail.com</p></li>
+            <li><p>Aidacuffaro@yahoo.es</p></li>
+          </ul></div>
+          <div class="payment-card">
+            <h3><i class="fas fa-money-bill-transfer"></i> Bizum</h3>
+            <p>645-40-29-95</p>
+          </div>
+        </div>
+
+        <div class="donation-column">
+          <div class="payment-card">
+            <h3><i class="fab fa-paypal"></i> PayPal</h3>
+            <p><strong>Email:</strong> Marc26antonio@gmail.com</p>
+            <p><strong>Usuario:</strong> @MGilLopez</p>
+          </div>
+          <div class="payment-card bank-card">
+            <ul><h3><i class="fas fa-university"></i> Bancos</h3>
+            <div class="bank-account">
+              <li><h4>Banco de Venezuela</h4>
+              <p><strong>Cuenta:</strong> 0102-0144-68-00-00400545</p>
+              <p><strong>Titular:</strong> Marco Antonio Gil López</p>
+              <p><strong>C.I.:</strong> 28229382</p></li>
+            </div>
+            <div class="bank-account">
+              <li><h4>Banesco</h4>
+              <p><strong>Cuenta:</strong> 1341104250001008720</p>
+              <p><strong>Titular:</strong> Mariolgui Del Valle Lopez Marcano</p>
+              <p><strong>C.I.:</strong> 12920712</p></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="section">
+      <h2>Sobre mí</h2>
+      <div class="about-grid">
+        <article class="card">
+         <p>Mi nombre es Marco Gil, tengo 26 años y soy el mayor de cuatro hermanos. Soy Técnico Superior en Navegación y Pesca, y actualmente estudio Licenciatura en Informática.</p>
+      <p>Fui diagnosticado con una lesión quística en el ángulo ponto-cerebeloso derecho de mi cerebro, lo que requiere una cirugía urgente: craniectomía suboccipital derecha con durotomía y exéresis del LOE.</p>
+        </article>
+        <article class="card">
+            <p>My name is Marco Gil. I am 26 years old and the eldest of four siblings. I hold a Higher Technical Diploma in Navigation and Fishing, and I am currently pursuing a Bachelor's Degree in Computer Science.</p>
+      <p>I was diagnosed with a cystic lesion in the right pontocerebellar angle of my brain, which requires urgent surgery: right suboccipital craniectomy with duraplasty and excision of the space-occupying lesion.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section">
+      <h2>Galería de Fotos</h2>
+      <div class="gallery">
+        <img src="foto en brasil.jpg" alt="Vista en parque Campinas en Brasil">
+        <img src="graduacion.jpg" alt="Graduación">
+        <img src="uniforme.jpg" alt="Uniforme">
+        <img src="atun.jpg" alt="Atún aleta azul">
+        <img src="comunion.jpg" alt="Comunión">
+        <img src="nacimiento eze.jpg" alt="Nacimiento de hermano">
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section contact">
+      <h2>Contacto</h2>
+      <article class="card">
+        <p><strong>📞 Teléfono:</strong> +58 412 359 6711</p>
+        <p><strong>📧 Email:</strong> Marc26antonio@gmail.com</p>
+        <p><strong>📍 Ubicación:</strong> Margarita, Venezuela</p>
+        <p><em>También diseño páginas web</em></p>
+      </article>
+    </section>
+
+    <!-- INFORMES MÉDICOS -->
+    <section class="section medical-reports">
+      <h2 class="highlighted-title">Informes Médicos</h2>
+      <div class="medical-content">
+        <div class="card">
+          <p><strong>Documentación médica</strong></p>
+          <ul>
+            <li>Certificados médicos actualizados</li>
+            <li>Presupuestos</li>
+            <li>Imágenes diagnósticas</li>
+          </ul>
+        </div>
+        <div class="medical-gallery">
+          <div class="image-container">
+            <img src="presupuesto 1.jpg" alt="Presupuesto médico 1" class="medical-img" onclick="openModal('presupuesto 1.jpg')">
+            <p class="img-caption">Presupuesto 1</p>
+          </div>
+          <div class="image-container">
+            <img src="presupuesto2.jpg" alt="Presupuesto médico 2" class="medical-img" onclick="openModal('presupuesto2.jpg')">
+            <p class="img-caption">Presupuesto 2</p>
+          </div>
+          <div class="image-container">
+            <img src="resonancia magnetica.jpg" alt="Resonancia" class="medical-img" onclick="openModal('resonancia magnetica.jpg')">
+            <p class="img-caption">Resonancia</p>
+          </div>
+          <div class="image-container">
+            <img src="informe medico.jpg" alt="Informe médico" class="medical-img" onclick="openModal('informe medico.jpg')">
+            <p class="img-caption">Neurocirugía</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div id="medicalModal" class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage" alt="">
+    <div id="caption"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Marco Gil | Página de Recaudación de Fondos</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
