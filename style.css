@@ -130,6 +130,8 @@ nav button:hover {
 .highlighted-btn {
   box-shadow: var(--btn-glow);
   font-weight: bold;
+  color: white;
+  background-color: red;
 }
 
 /* ========================
