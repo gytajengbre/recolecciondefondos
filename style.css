@@ -1,335 +1,896 @@
-/* ========================
-   PALETA Y FUENTES
-=========================== */
 :root {
+  --primary-color: #005bbb;
+  --primary-dark: #003f8c;
+  --primary-light: #e6f0fa;
+  --secondary-color: #00a36c;
+  --accent-color: #ff6b6b;
+  --text-color: #2d3748;
+  --text-light: #4a5568;
   --bg-color: #ffffff;
-  --bg-gradient: linear-gradient(180deg, #f5f7fa, #ffffff);
-  --card-color: #f9f9f9;
-  --text-color: #1a1a1a;
-  --accent-color: #005bbb;
-  --accent-hover: #003f8c;
-  --border-radius: 16px;
-  --transition: all 0.3s ease-in-out;
-  --shadow: 0 4px 20px rgba(0, 91, 187, 0.1);
-  --inner-glow: 0 0 5px rgba(0, 91, 187, 0.1);
-  --btn-glow: 0 0 12px rgba(0, 91, 187, 0.15);
+  --card-bg: #f8fafc;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--bg-gradient);
-  color: var(--text-color);
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  scroll-behavior: smooth;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* ========================
-   ENCABEZADO
-=========================== */
-header.main-header {
-  text-align: center;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header - Completamente Responsivo */
+.main-header {
+  background: 
+    linear-gradient(rgba(0, 91, 187, 0.8), rgba(0, 91, 187, 0.8)),
+    url('foto\ en\ brasil.jpg') center/cover no-repeat;
+  color: white;
   padding: 2rem 1rem;
-  background: var(--card-color);
-  box-shadow: var(--shadow);
-  border-bottom: 1px solid #ddd;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  color: var(--accent-color);
-  text-shadow: var(--inner-glow);
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
   margin: 0;
+  font-weight: 700;
+  word-wrap: break-word;
 }
 
-header p {
-  font-size: 1.1rem;
-  color: #444;
-  margin: 0.5rem 0 0;
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin: 0.5rem 0;
+  font-weight: 400;
 }
 
-/* ========================
-   REDES SOCIALES
-=========================== */
+.urgent-message {
+  background-color: var(--accent-color);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Redes sociales - SIEMPRE HORIZONTALES */
+/* SOLUCIÓN MÁS ROBUSTA - FUERZA HORIZONTAL */
 .social-media {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  display: flex !important; /* Fuerza flex */
+  flex-direction: row !important; /* Fuerza dirección horizontal */
+  flex-wrap: nowrap !important; /* NO permite wrap */
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto; /* Scroll horizontal si es necesario */
+  padding: 0.5rem 0;
+  white-space: nowrap; /* Extra seguridad - no saltos de línea */
+  width: 100%; /* Asegura que tome todo el ancho disponible */
 }
 
 .social-media a {
-  margin: 0 10px;
-  color: var(--text-color);
-  font-size: 1.5rem;
-  transition: var(--transition);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-flex !important; /* Fuerza inline-flex */
+  align-items: center;
+  padding: 0.5rem;
+  flex-shrink: 0 !important; /* NO se puede comprimir */
+  flex-grow: 0 !important; /* NO crece */
+  min-width: fit-content !important; /* Mantiene tamaño mínimo */
+  white-space: nowrap; /* Evita saltos de línea en el texto */
 }
 
 .social-media a:hover {
-  color: var(--accent-hover);
   transform: scale(1.2);
+  color: #ffd166;
 }
 
-/* GoFundMe icono */
-/* Contenedor con ícono + texto */
+/* ALTERNATIVA 1: Si sigue fallando, usa este método con position */
+.social-media-alternative {
+  margin-top: 1.5rem;
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
+.social-media-alternative .social-container {
+  display: inline-flex;
+  white-space: nowrap;
+  gap: 0.5rem;
+  align-items: center;
+  min-width: 100%;
+  justify-content: center;
+}
+
+
+
+
+/* GoFundMe icon - Responsivo */
 .gofundme-icon {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  text-decoration: none;
+  gap: 0.5rem;
+  background-color: var(--secondary-color);
+  color: white !important;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
   font-weight: 600;
-  font-size: 1rem;
-  color: #00a36c; /* Verde GoFundMe o el que prefieras */
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  text-decoration: none;
+  margin: 0.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: var(--box-shadow);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  min-width: fit-content;
 }
 
-/* Imagen GoFundMe */
-.gofundme-icon img {
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  background-color: white;
-  padding: 4px;
-  box-shadow: 0 0 8px rgba(0, 180, 50, 0.3);
-  transition: transform 0.3s ease;
-}
-
-/* Hover general */
 .gofundme-icon:hover {
-  color: #007c4a;
+  transform: scale(1.05);
+  background-color: #008055;
 }
 
-.gofundme-icon img:hover {
-  transform: scale(1.15);
+.gofundme-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--secondary-color);
+  color: white !important;
+  padding: 1.2rem 2rem;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  text-decoration: none;
+  margin: 2rem auto;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 90%;
 }
 
+.gofundme-main:hover {
+  transform: scale(1.05);
+  background-color: #008055;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-/* ========================
-   NAVEGACIÓN
-=========================== */
-nav.main-nav {
+/* Navigation - SIEMPRE HORIZONTAL */
+.main-nav {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--box-shadow);
+  overflow-x: auto; /* NUEVO: permite scroll horizontal */
+  -webkit-overflow-scrolling: touch; /* Smooth scroll en iOS */
+  scroll-behavior: smooth;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* CAMBIO: de wrap a nowrap */
+  padding: 0.5rem;
+  gap: 0.3rem;
+  min-width: fit-content; /* NUEVO: mantiene tamaño mínimo */
+  width: 100%;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  flex-shrink: 0; /* CAMBIO: no se comprimen */
+  min-width: fit-content;
+  text-align: center;
+  white-space: nowrap; /* NUEVO: evita salto de línea en el texto */
+}
+
+.nav-btn:hover {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.nav-btn.active {
+  color: var(--primary-color);
+  font-weight: 600;
+  background-color: var(--primary-light);
+}
+
+.nav-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+}
+
+/* Scrollbar personalizada para la navegación */
+.main-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.main-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-nav::-webkit-scrollbar-thumb {
+  background: var(--primary-color, #007bff);
+  border-radius: 2px;
+}
+
+.main-nav::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color-dark, #0056b3);
+}
+
+/* ALTERNATIVA: Ocultar scrollbar pero mantener funcionalidad */
+.main-nav-no-scrollbar {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--box-shadow);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.main-nav-no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Responsive - Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .nav-container {
+    justify-content: flex-start; /* CAMBIO: alinea a la izquierda en móviles */
+    padding: 0.5rem 1rem; /* Un poco más de padding en los lados */
+  }
+  
+  .nav-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-btn {
+    padding: 0.6rem 1rem;
+    font-size: clamp(0.7rem, 2vw, 0.85rem);
+  }
+  
+  .nav-container {
+    gap: 0.2rem;
+  }
+}
+
+/* OPCIÓN ADICIONAL: Botones de navegación para la navegación */
+.nav-with-arrows {
+  position: relative;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary-color, #007bff);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 10;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.nav-arrow:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-arrow.left {
+  left: 5px;
+}
+
+.nav-arrow.right {
+  right: 5px;
+}
+
+/* Fade edges effect - efecto de desvanecimiento en los bordes */
+.nav-fade-edges {
+  position: relative;
+}
+
+.nav-fade-edges::before,
+.nav-fade-edges::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.nav-fade-edges::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.nav-fade-edges::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* Section Indicator - Responsivo */
+.section-indicator {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  background-color: var(--primary-light);
+}
+
+.indicator-dots {
+  display: flex;
+  gap: clamp(0.5rem, 2vw, 1rem);
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.8rem;
-  background: #eee;
-  padding: 1rem;
 }
 
-nav button {
-  background: var(--accent-color);
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: var(--border-radius);
-  font-weight: 500;
+.dot {
+  width: clamp(10px, 2vw, 12px);
+  height: clamp(10px, 2vw, 12px);
+  border-radius: 50%;
+  background-color: #cbd5e0;
   cursor: pointer;
   transition: var(--transition);
 }
 
-nav button:hover {
-  background: var(--accent-hover);
+.dot:hover {
+  background-color: #a0aec0;
 }
 
-.highlighted-btn {
-  box-shadow: var(--btn-glow);
-  font-weight: bold;
-  color: white;
-  background-color: red;
+.dot.active {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
 }
 
-/* ========================
-   CARRUSEL
-=========================== */
+/* Carousel - Responsivo */
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
 .carousel {
   display: flex;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  transition: transform 0.5s ease;
+  width: 100%;
 }
 
 .section {
   min-width: 100%;
-  padding: 2rem;
+  flex-shrink: 0;
+  padding: clamp(1rem, 4vw, 2rem);
   box-sizing: border-box;
-  background: var(--bg-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-/* ========================
-   TARJETAS
-=========================== */
-.card {
-  background: var(--card-color);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  border: 1px solid #ddd;
+.section h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  word-wrap: break-word;
 }
 
-/* ========================
-   SECCIÓN SOBRE MÍ
-=========================== */
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(60px, 15vw, 80px);
+  height: 3px;
+  background-color: var(--primary-color);
 }
 
-/* ========================
-   DONACIONES
-=========================== */
+/* Título con botón - Responsivo */
+.title-with-button {
+  position: relative;
+  display: inline-block;
+}
+
+.title-with-button .gofundme-icon {
+  margin-left: clamp(5px, 2vw, 15px);
+  vertical-align: middle;
+}
+
+/* Donation Section - Responsiva */
+.donation-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
 .two-column-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1rem, 4vw, 2rem);
+  width: 100%;
 }
 
 .payment-card {
-  background: var(--card-color);
-  padding: 1rem 1.5rem;
+  background-color: var(--card-bg);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  box-shadow: var(--box-shadow);
   transition: var(--transition);
-  border-left: 4px solid var(--accent-color);
+  border-top: 4px solid var(--primary-color);
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .payment-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px var(--accent-hover);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .payment-card h3 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  flex-wrap: wrap;
 }
 
-/* ========================
-   GALERÍA
-=========================== */
+.payment-card p {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  word-break: break-all;
+  margin: 0.5rem 0;
+}
+
+.bank-account {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.bank-account:last-child {
+  border-bottom: none;
+}
+
+.bank-account h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+}
+
+/* About Section - Completamente Responsiva */
+.about-layout {
+  display: flex;
+  gap: clamp(1rem, 4vw, 2rem);
+  margin-top: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about-layout > div:first-child {
+  flex: 1;
+  min-width: min(250px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-layout img {
+  max-width: 100%;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.about-layout img:hover {
+  transform: scale(1.02);
+}
+
+.about-texts {
+  flex: 2;
+  min-width: min(300px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.card {
+  background: var(--card-bg);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border-left: 4px solid var(--primary-color);
+  word-wrap: break-word;
+}
+
+.card h3 {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+}
+
+/* Gallery - Responsiva */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(120px, 20vw, 200px), 1fr));
+  gap: clamp(0.5rem, 2vw, 1rem);
   margin-top: 2rem;
+  width: 100%;
 }
 
 .gallery img {
   width: 100%;
+  height: clamp(100px, 15vw, 150px);
+  object-fit: cover;
   border-radius: var(--border-radius);
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--box-shadow);
 }
 
 .gallery img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 20px var(--accent-color);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* ========================
-   INFORMES MÉDICOS
-=========================== */
+/* Medical Reports - Responsiva */
+.medical-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
 .medical-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(150px, 25vw, 250px), 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+  width: 100%;
+}
+
+.image-container {
+  text-align: center;
 }
 
 .medical-img {
   width: 100%;
+  height: clamp(120px, 20vw, 180px);
+  object-fit: cover;
   border-radius: var(--border-radius);
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--box-shadow);
 }
 
 .medical-img:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .img-caption {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #555;
   margin-top: 0.5rem;
+  font-weight: 500;
+  color: var(--text-light);
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
-/* ========================
-   MODAL
-=========================== */
+/* Modal - Responsivo */
 .modal {
   display: none;
   position: fixed;
-  background: rgba(0, 0, 0, 0.9);
-  top: 0;
+  z-index: 1000;
   left: 0;
-  height: 100%;
+  top: 0;
   width: 100%;
-  z-index: 999;
-  padding-top: 60px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .modal-content {
-  margin: auto;
   display: block;
-  max-width: 90%;
-  max-height: 80vh;
+  margin: auto;
+  max-width: 95%;
+  max-height: 90%;
   border-radius: var(--border-radius);
+  animation: zoom 0.3s ease;
+  object-fit: contain;
+}
+
+@keyframes zoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
 }
 
 .close-btn {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: #fff;
+  top: clamp(10px, 3vw, 20px);
+  right: clamp(15px, 4vw, 35px);
+  color: #f1f1f1;
+  font-size: clamp(30px, 6vw, 40px);
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
+  z-index: 1001;
 }
 
-/* ========================
-   FOOTER
-=========================== */
-footer {
+.close-btn:hover {
+  color: #bbb;
+}
+
+#caption {
   text-align: center;
-  padding: 1rem;
-  background: #f5f5f5;
-  color: #777;
-  border-top: 1px solid #ddd;
+  color: #ccc;
+  padding: 10px 0;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  word-wrap: break-word;
 }
 
-/* ========================
-   RESPONSIVE
-=========================== */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  nav button {
-    font-size: 0.9rem;
-  }
-
-  .gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-/* Diseño lateral para la sección sobre mí */
-.about-layout {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-  align-items: start;
-  margin-top: 2rem;
-}
-
-/* Imagen personal */
-.about-photo {
+/* Contact Section - Responsiva */
+.contact .card {
+  max-width: 600px;
+  margin: 0 auto;
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Columnas se apilan en móviles */
+.contact .card p {
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+  word-break: break-word;
+}
+
+/* Footer - Responsivo */
+.main-footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: clamp(1.5rem, 4vw, 2rem);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  margin: 0.5rem 0;
+}
+
+.urgent-help {
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #ffd166;
+  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+}
+
+/* Progress bar - Responsiva */
+.progress-container {
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 1rem auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+  height: clamp(15px, 3vw, 20px);
+  border-radius: 8px;
+  width: 21%;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  word-wrap: break-word;
+}
+
+/* Responsive Breakpoints Específicos */
 @media (max-width: 768px) {
+  .main-header {
+    min-height: 35vh;
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
   .about-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .about-layout > div:first-child {
+    order: -1;
+  }
+  
+  .two-column-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .social-media {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    min-height: 30vh;
+    padding: 1rem 0.5rem;
+  }
+  
+  .title-with-button {
+    display: block;
+    text-align: center;
+  }
+  
+  .title-with-button .gofundme-icon {
+    display: inline-flex;
+    margin: 1rem auto 0 auto;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .medical-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  
+  .section {
+    padding: 1rem 0.5rem;
+  }
+  
+  .modal {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .payment-card p {
+    font-size: 0.8rem;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  
+  .nav-container {
+    padding: 0.25rem;
+  }
+  
+  .section {
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+/* Mejoras adicionales para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Soporte para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #e2e8f0;
+    --text-light: #a0aec0;
+    --bg-color: #1a202c;
+    --card-bg: #2d3748;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (orientation: landscape) and (max-height: 500px) {
+  .main-header {
+    min-height: 50vh;
+  }
+  
+  .section {
+    padding: 1rem;
   }
 }
