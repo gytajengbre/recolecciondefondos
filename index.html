@@ -3,138 +3,213 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página de recaudación de fondos para la cirugía cerebral de Marco Gil">
   <title>Marco Gil | Portafolio Médico y Profesional</title>
-
-  <!-- Fuentes y estilos externos -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css"
 </head>
 
 <body>
   <!-- ENCABEZADO -->
   <header class="main-header">
-    <h1>Marco Gil</h1>
-    <p>Técnico Superior en Navegación y Pesca</p>
+    <div class="header-content">
+      <h1>Marco Gil</h1>
+      <p class="subtitle">Técnico Superior en Navegación y Pesca</p>
+      <p class="urgent-message">Necesito ayuda para mi cirugía cerebral urgente</p>
 
-    <!-- Redes sociales + GoFundMe -->
-    <div class="social-media">
-      <a href="https://www.linkedin.com/in/marco-antonio-gil-lopez-5943521b2" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://github.com/gytajengbre" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.instagram.com/gllpzmarco" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/qr/FSZ3GLV672YQB1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://gofund.me/a7e0699f" target="_blank" class="gofundme-icon">
-  <img src="https://cdn.iconscout.com/icon/free/png-512/free-gofundme-3628882-3029990.png" alt="https://gofund.me/a7e0699f">
-  <span>GoFundMe</span>
-</a>
+      <!-- Redes sociales + GoFundMe -->
+      <div class="social-media">
+        <a href="https://www.linkedin.com/in/marco-antonio-gil-lopez-5943521b2" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/gytajengbre" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/gllpzmarco" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/qr/FSZ3GLV672YQB1" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://gofund.me/a7e0699f" target="_blank" class="gofundme-icon" aria-label="GoFundMe">
+          <i class="fas fa-heart"></i>
+          <span>GoFundMe</span>
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- NAVEGACIÓN -->
   <nav class="main-nav">
-    <button onclick="goToSlide(0)" class="highlighted-btn">Donaciones</button>
-    <button onclick="goToSlide(1)">Sobre mí</button>
-    <button onclick="goToSlide(2)">Galería</button>
-    <button onclick="goToSlide(3)">Contacto</button>
-    <button onclick="goToSlide(4)" class="highlighted-btn">Informes Médicos</button>
+    <div class="nav-container">
+      <button class="nav-btn active" data-slide="0">Donaciones</button>
+      <button class="nav-btn" data-slide="1">Informes Médicos</button>
+      <button class="nav-btn" data-slide="2">Sobre mí</button>
+      <button class="nav-btn" data-slide="3">Galería</button>
+      <button class="nav-btn" data-slide="4">Contacto</button>
+    </div>
   </nav>
 
-  <!-- CARRUSEL -->
-  <main class="carousel" id="carousel">
+  <!-- INDICADOR DE SECCIÓN ACTUAL -->
+  <div class="section-indicator">
+    <div class="indicator-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+    </div>
+  </div>
 
-    <!-- DONACIONES -->
-    <section class="section">
-      <h2 class="highlighted-title">Métodos de Donación</h2>
-      <a href="https://gofund.me/a7e0699f" target="_blank" class="gofundme-icon">
-  <img src="https://cdn.iconscout.com/icon/free/png-512/free-gofundme-3628882-3029990.png" alt="https://gofund.me/a7e0699f">
-  <span>GoFundMe</span></a>
-      <div class="two-column-grid">
-        <div class="donation-column">
-          <div class="payment-card">
-            <ul><h3><i class="fab fa-bitcoin"></i> Binance</h3>
-            <li><p><strong>Email:</strong> gllpz2699@gmail.com</p>
-            <p><strong>Pay ID:</strong> 40662836</p></li>
-            <li><p><strong>Email:</strong> gil33433@gmail.com</p>
-            <p><strong>Pay ID:</strong> 422709951</p></li>
-          </ul></div>
-         <div class="payment-card bank-card">
-            <ul><h3><i class="fas fa-university"></i> Bancos</h3>
-            <div class="bank-account">
-              <li><h4>Banco de Venezuela</h4>
-              <p><strong>Cuenta:</strong> 0102-0144-68-00-00400545</p>
-              <p><strong>Titular:</strong> Marco Antonio Gil López</p>
-              <p><strong>C.I.:</strong> 28229382</p></li>
+  <!-- CARRUSEL -->
+  <main class="carousel-container">
+    <div class="carousel" id="carousel">
+      <!-- DONACIONES -->
+      <section class="section" id="donaciones">
+        <h2>Métodos de Donación</h2>
+
+        <div class="donation-section-header">
+          <div class="progress-container">
+            <div class="progress-bar"></div>
+          </div>
+          <p class="progress-text">Meta: $7,000 USD • Recaudado: $1,500 USD </p>
+          
+          <a href="https://gofund.me/a7e0699f" target="_blank" class="gofundme-main">
+            <i class="fas fa-heart"></i>
+            <span>Donar en GoFundMe</span>
+          </a>
+        </div>
+
+        <div class="two-column-grid">
+          <!-- COLUMNA IZQUIERDA -->
+          <div class="donation-column">
+            <div class="payment-card">
+              <h3><i class="fab fa-bitcoin"></i> Binance</h3>
+              <p><strong>Email:</strong> gllpz2699@gmail.com</p>
+              <p><strong>Pay ID:</strong> 40662836</p>
+              <p><strong>Email:</strong> gil33433@gmail.com</p>
+              <p><strong>Pay ID:</strong> 422709951</p>
             </div>
-            <div class="bank-account">
-              <li><h4>Banesco</h4>
-              <p><strong>Cuenta:</strong> 1341104250001008720</p>
-              <p><strong>Titular:</strong> Mariolgui Del Valle Lopez Marcano</p>
-              <p><strong>C.I.:</strong> 12920712</p></li></ul>
+
+            <div class="payment-card bank-card">
+              <h3><i class="fas fa-university"></i> Bancos</h3>
+
+              <div class="bank-account">
+                <h4>Banco de Venezuela</h4>
+                <p><strong>Cuenta:</strong> 0102-0144-68-00-00400545</p>
+                <p><strong>Titular:</strong> Marco Antonio Gil López</p>
+                <p><strong>C.I.:</strong> 28229382</p>
+              </div>
+
+              <div class="bank-account">
+                <h4>Banesco</h4>
+                <p><strong>Cuenta:</strong> 1341104250001008720</p>
+                <p><strong>Titular:</strong> Mariolgui Del Valle Lopez Marcano</p>
+                <p><strong>C.I.:</strong> 12920712</p>
+              </div>
             </div>
+          </div>
+
+          <!-- COLUMNA DERECHA -->
+          <div class="donation-column">
+            <div class="payment-card">
+              <h3><i class="fas fa-money-bill-transfer"></i> Zelle</h3>
+              <p><strong>Email:</strong> Joseferminster@gmail.com</p>
+              <p><strong>Email:</strong> Aidacuffaro@yahoo.es</p>
+            </div>
+
+            <div class="payment-card">
+              <h3><i class="fab fa-paypal"></i> PayPal</h3>
+              <p><strong>Email:</strong> Marc26antonio@gmail.com</p>
+              <p><strong>Usuario:</strong> @MGilLopez</p>
+            </div>
+
+            <div class="payment-card">
+              <h3><i class="fas fa-mobile-alt"></i> Bizum</h3>
+              <p><strong>Teléfono:</strong> 645-40-29-95</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFORMES MÉDICOS -->
+      <section class="section medical-reports">
+        <h2>Informes Médicos</h2>
+        <div class="medical-content">
+          <div class="card">
+            <h3><i class="fas fa-file-medical"></i> Documentación médica</h3>
+            <p>Toda la documentación médica está disponible para verificar la urgencia del caso:</p>
+            <ul>
+              <li>Certificados médicos actualizados</li>
+              <li>Presupuestos detallados de la cirugía</li>
+              <li>Imágenes diagnósticas (Resonancia Magnética)</li>
+              <li>Informes de neurocirugía</li>
+            </ul>
+          </div>
+          <div class="medical-gallery">
+            <div class="image-container">
+              <img src="presupuesto 1.jpg" alt="Presupuesto médico 1" class="medical-img" onclick="openModal(this.src, 'Presupuesto Clínica 1')">
+              <p class="img-caption">Presupuesto Clínica 1</p>
+            </div>
+            <div class="image-container">
+              <img src="Presupuesto2.jpg" alt="Presupuesto médico 2" class="medical-img" onclick="openModal(this.src, 'Presupuesto Clínica 2')">
+              <p class="img-caption">Presupuesto Clínica 2</p>
+            </div>
+            <div class="image-container">
+              <img src="resonancia magnetica.jpg" alt="Resonancia" class="medical-img" onclick="openModal(this.src, 'Resonancia Magnética')">
+              <p class="img-caption">Resonancia Magnética</p>
+            </div>
+            <div class="image-container">
+              <img src="informe medico.jpg" alt="Informe médico" class="medical-img" onclick="openModal(this.src, 'Informe Neurocirugía')">
+              <p class="img-caption">Informe Neurocirugía</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE MÍ -->
+<section class="section" aria-label="Sobre mí">
+  <h2>¡QUIERO TENER UNA <span class="title-with-button">VIDA DIGNA! 
+    <button onclick="document.getElementById('donaciones').scrollIntoView({ behavior: 'smooth' })" class="gofundme-icon">
+      <i class="fas fa-money"></i><span>AYUDAR!</span>
+    </button>
+  </span></h2>
+
+        <!-- Contenedor con imagen a un lado y texto al otro -->
+        <div class="about-layout">
+          <!-- Columna: Imagen -->
+          <div>
+            <img src="gofundme.jpg" alt="Marco Gil"  onclick="openModal(this.src, 'Marco Gil')">
+            <a href="https://gofund.me/a7e0699f" target="_blank" class="gofundme-icon">
+              <i class="fas fa-heart"></i>
+              <span>¡Donar!</span>
+            </a>
           </div>
           
-        </div>
+          <!-- Columna: Textos en español e inglés -->
+          <div class="about-texts">
+            <article class="card">
+              <h3><i class="fas fa-user"></i> Español</h3>
+              <p>Mi nombre es Marco Gil, tengo 26 años y soy el mayor de cuatro hermanos. Soy Técnico Superior en Navegación y Pesca, y actualmente estudio Licenciatura en Informática.</p>
+              <p><strong>Fui diagnosticado con una lesión quística en el ángulo ponto-cerebeloso derecho de mi cerebro</strong>, lo que requiere una cirugía urgente: <em>craniectomía suboccipital derecha con durotomía y exéresis del LOE</em>.</p>
+              <p>Mi sueño es poder continuar con mis estudios y tener una vida normal. Tu ayuda puede hacer la diferencia.</p>
+            </article>
 
-        <div class="donation-column">
-           <div class="payment-card">
-            <ul><h3><i class="fas fa-money-bill-transfer"></i> Zelle</h3>
-            <li><p>Joseferminster@gmail.com</p></li>
-            <li><p>Aidacuffaro@yahoo.es</p></li>
-          </ul></div>
-          <div class="payment-card">
-            <h3><i class="fab fa-paypal"></i> PayPal</h3>
-            <p><strong>Email:</strong> Marc26antonio@gmail.com</p>
-            <p><strong>Usuario:</strong> @MGilLopez</p>
+            <article class="card">
+              <h3><i class="fas fa-globe"></i> English</h3>
+              <p>My name is Marco Gil. I am 26 years old and the eldest of four siblings. I hold a Higher Technical Diploma in Navigation and Fishing, and I am currently pursuing a Bachelor's Degree in Computer Science.</p>
+              <p><strong>I was diagnosed with a cystic lesion in the right pontocerebellar angle of my brain</strong>, which requires urgent surgery: <em>right suboccipital craniectomy with duraplasty and excision of the space-occupying lesion</em>.</p>
+              <p>My dream is to continue my studies and have a normal life. Your help can make all the difference.</p>
+            </article>
           </div>
-          <div class="payment-card">
-            <h3><i class="fas fa-money-bill-transfer"></i> Bizum</h3>
-            <p>645-40-29-95</p>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" aria-label="Sobre mí">
-  <h2>Sobre mí... &nbsp; AYUDEME A SUPERAR LA CIRUGIA DE UN TUMOR QUISTICO!</h2>
-  <!-- Contenedor con imagen a un lado y texto al otro -->
-  <div class="about-layout">
-    
-    <!-- Columna: Imagen -->
-    <div class="about-image">
-      <img src="gofundme.jpg" alt="Marco Gil" class="about-photo">
-      <a href="https://www.gofundme.com/f/ayudamarcoantonio/donate?source=btn_donate" target="_blank" class="gofundme-icon">
-  <img src="https://cdn.iconscout.com/icon/free/png-512/free-gofundme-3628882-3029990.png" alt="https://gofund.me/a7e0699f">
-  <span>Donar!</span></a>
-    </div>
-    <!-- Columna: Textos en español e inglés -->
-    <div class="about-texts">
-      <article class="card">
-        <p>Mi nombre es Marco Gil, tengo 26 años y soy el mayor de cuatro hermanos. Soy Técnico Superior en Navegación y Pesca, y actualmente estudio Licenciatura en Informática.</p>
-        <p>Fui diagnosticado con una lesión quística en el ángulo ponto-cerebeloso derecho de mi cerebro, lo que requiere una cirugía urgente: craniectomía suboccipital derecha con durotomía y exéresis del LOE.</p>
-      </article>
-
-      <article class="card">
-        <p>My name is Marco Gil. I am 26 years old and the eldest of four siblings. I hold a Higher Technical Diploma in Navigation and Fishing, and I am currently pursuing a Bachelor's Degree in Computer Science.</p>
-        <p>I was diagnosed with a cystic lesion in the right pontocerebellar angle of my brain, which requires urgent surgery: right suboccipital craniectomy with duraplasty and excision of the space-occupying lesion.</p>
-      </article>
-    </div>
-
-  </div>
-</section>
-
-
-    <!-- GALERÍA -->
-    <section class="section">
-      <h2>Galería de Fotos</h2>
-      <div class="gallery">
-        <img src="foto en brasil.jpg" alt="Vista en parque Campinas en Brasil">
-        <img src="graduacion.jpg" alt="Graduación">
-        <img src="uniforme.jpg" alt="Uniforme">
-        <img src="atun.jpg" alt="Atún aleta azul">
-        <img src="comunion.jpg" alt="Comunión">
-        <img src="nacimiento eze.jpg" alt="Nacimiento de hermano">
-      </div>
-    </section>
+      <!-- GALERÍA -->
+      <section class="section">
+        <h2>Galería de Fotos</h2>
+        <div class="gallery">
+          <img src="graduacion.jpg" alt="Vista en parque Campinas en Brasil" onclick="openModal(this.src, 'Vista en parque Campinas, Brasil')">
+          <img src="nacimiento eze.jpg" alt="Graduación" onclick="openModal(this.src, 'Graduación como Técnico Superior')">
+          <img src="uniforme.jpg" alt="Uniforme" onclick="openModal(this.src, 'Uniforme de Navegación')">
+          <img src="atun.jpg" alt="Atún aleta azul" onclick="openModal(this.src, 'Pesca de Atún Aleta Azul')">
+          <img src="comunion.jpg" alt="Comunión" onclick="openModal(this.src, 'Primera Comunión')">
+          <img src="foto en brasil.jpg" alt="Nacimiento de hermano" onclick="openModal(this.src, 'Con la familia')">
+        </div>
+      </section>
 
     <!-- CONTACTO -->
     <section class="section contact">
@@ -147,38 +222,7 @@
       </article>
     </section>
 
-    <!-- INFORMES MÉDICOS -->
-    <section class="section medical-reports">
-      <h2 class="highlighted-title">Informes Médicos</h2>
-      <div class="medical-content">
-        <div class="card">
-          <p><strong>Documentación médica</strong></p>
-          <ul>
-            <li>Certificados médicos actualizados</li>
-            <li>Presupuestos</li>
-            <li>Imágenes diagnósticas</li>
-          </ul>
-        </div>
-        <div class="medical-gallery">
-          <div class="image-container">
-            <img src="presupuesto 1.jpg" alt="Presupuesto médico 1" class="medical-img" onclick="openModal('presupuesto 1.jpg')">
-            <p class="img-caption">Presupuesto 1</p>
-          </div>
-          <div class="image-container">
-            <img src="presupuesto2.jpg" alt="Presupuesto médico 2" class="medical-img" onclick="openModal('presupuesto2.jpg')">
-            <p class="img-caption">Presupuesto 2</p>
-          </div>
-          <div class="image-container">
-            <img src="resonancia magnetica.jpg" alt="Resonancia" class="medical-img" onclick="openModal('resonancia magnetica.jpg')">
-            <p class="img-caption">Resonancia</p>
-          </div>
-          <div class="image-container">
-            <img src="informe medico.jpg" alt="Informe médico" class="medical-img" onclick="openModal('informe medico.jpg')">
-            <p class="img-caption">Neurocirugía</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
   <!-- MODAL -->
@@ -189,11 +233,21 @@
   </div>
 
   <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Marco Gil | Página de Recaudación de Fondos</p>
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Marco Gil | Página de Recaudación de Fondos</p>
+      <p class="urgent-help">¡Tu ayuda puede salvar mi vida!</p>
+    </div>
   </footer>
 
-  <!-- SCRIPT -->
   <script src="script.js"></script>
+  <script>
+  // Solo para el botón AYUDAR! (opcional si prefieres no usar onclick en el HTML)
+  document.querySelector('.gofundme-icon[onclick]').addEventListener('click', function() {
+    document.getElementById('donaciones').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  });
+</script>
 </body>
 </html>
