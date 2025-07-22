@@ -185,11 +185,6 @@
     <button onclick="document.querySelector('#donaciones').scrollIntoView({behavior: 'smooth'})" class="gofundme-icon">
     <i class="fas fa-money"></i><span>AYUDAR!</span>
 </button>
-
-<!-- Y asegúrate de que tu sección de donaciones tenga exactamente este formato: -->
-<section id="donaciones">
-    <h2>DONACIONES</h2>
-    <!-- Tu contenido de donaciones aquí -->
 </section>
   </span></h2>
 
@@ -272,39 +267,18 @@
     </div>
   </footer>
 <script>
-// Función mejorada para hacer scroll a la sección de donaciones
+// Función para hacer scroll a la sección de donaciones
 function scrollToDonaciones() {
     const donacionesSection = document.getElementById('donaciones');
     
     if (donacionesSection) {
-        // Opción 1: Usando scrollIntoView (más compatible)
         donacionesSection.scrollIntoView({ 
             behavior: 'smooth',
             block: 'start'
         });
-        
-        // Opcional: Agregar un pequeño offset desde la parte superior
-        // setTimeout(() => {
-        //     window.scrollBy(0, -50); // Ajusta este valor según necesites
-        // }, 500);
     } else {
         console.error('No se encontró la sección con id "donaciones"');
         alert('Error: No se puede encontrar la sección de donaciones');
-    }
-}
-
-// Función alternativa usando scrollTo (si prefieres mayor control)
-function scrollToDonacionesAlternativa() {
-    const donacionesSection = document.getElementById('donaciones');
-    
-    if (donacionesSection) {
-        const elementPosition = donacionesSection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - 50; // 50px de offset
-        
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
     }
 }
 
