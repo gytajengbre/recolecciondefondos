@@ -16,7 +16,7 @@
     <div class="header-content">
       <h1>Marco Gil</h1>
       <p class="subtitle">Técnico Superior en Navegación y Pesca</p>
-      <p class="urgent-message">Necesito ayuda para mi cirugía cerebral urgente</p>
+      <h2 class="urgent-message">Necesito ayuda para mi cirugía cerebral urgente</h2>
 
       <!-- Redes sociales + GoFundMe -->
       <div class="social-media">
@@ -101,6 +101,11 @@
                 <p><strong>C.I.:</strong> 12920712</p>
               </div>
             </div>
+             <div class="payment-card">
+                <h4>zinli</h4>
+                <p><strong>Correo:</strong> gil33433@gmail.com</p>
+                
+              </div>
           </div>
 
           <!-- COLUMNA DERECHA -->
@@ -120,6 +125,12 @@
             <div class="payment-card">
               <h3><i class="fas fa-mobile-alt"></i> Bizum</h3>
               <p><strong>Teléfono:</strong> 645-40-29-95</p>
+            </div>
+            <div class="payment-card">
+              <h3><i class="fas fa-mobile-alt"></i>BCP</h3>
+              <p><strong>QR Yape</strong></p><img src="yape.jpg" alt="esto es un qr de yape">
+              <p><strong>Cuenta soles :</strong> 19199558813055</p>
+              <p><strong>Cuenta interbancaria:</strong> 00219119955881305559</p>
             </div>
           </div>
         </div>
@@ -239,15 +250,47 @@
       <p class="urgent-help">¡Tu ayuda puede salvar mi vida!</p>
     </div>
   </footer>
-
-  <script src="script.js"></script>
-  <script>
-  // Solo para el botón AYUDAR! (opcional si prefieres no usar onclick en el HTML)
-  document.querySelector('.gofundme-icon[onclick]').addEventListener('click', function() {
-    document.getElementById('donaciones').scrollIntoView({ 
-      behavior: 'smooth' 
-    });
+<script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Desactivar transiciones temporalmente
+    document.body.classList.add('no-transitions');
+    
+    setTimeout(function() {
+      // 2. Mover carrusel al slide de "Sobre mí" (tercer slide)
+      const carousel = document.querySelector('.carousel');
+      if (carousel) {
+        const slideWidth = document.querySelector('.section').offsetWidth;
+        carousel.style.transform = `translateX(-${slideWidth * 2}px)`;
+      }
+      
+      // 3. Activar elementos de navegación
+      document.querySelector('.nav-btn[data-slide="2"]')?.classList.add('active');
+      document.querySelector('.dot[data-index="2"]')?.classList.add('active');
+      
+      // 4. Scroll al botón AYUDAR! después de un pequeño delay
+      setTimeout(function() {
+        const helpButton = document.querySelector('.title-with-button .gofundme-icon');
+        if (helpButton) {
+          // Scroll preciso al botón
+          helpButton.scrollIntoView({
+            behavior: 'auto',
+            block: 'center' // Centra verticalmente el botón
+          });
+          
+          // Efecto visual de atención (opcional)
+          helpButton.style.boxShadow = '0 0 0 3px rgba(255,107,107,0.5)';
+          setTimeout(() => helpButton.style.boxShadow = '', 2000);
+        }
+      }, 100);
+      
+      // Restaurar transiciones
+      setTimeout(function() {
+        document.body.classList.remove('no-transitions');
+      }, 200);
+    }, 50);
   });
 </script>
+
 </body>
 </html>
