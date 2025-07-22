@@ -183,37 +183,39 @@
 <section class="section" aria-label="Sobre mí">
   <h2>¡QUIERO TENER UNA <span class="title-with-button">VIDA DIGNA! 
     <button onclick="document.querySelector('#donaciones').scrollIntoView({behavior: 'smooth'})" class="gofundme-icon">
-    <i class="fas fa-money"></i><span>AYUDAR!</span>
-</button>
-</section>
-        <!-- Contenedor con imagen a un lado y texto al otro -->
-        <div class="about-layout">
-          <!-- Columna: Imagen -->
-            <img src="gofundme.jpg" alt="Marco Gil"  onclick="openModal(this.src, 'Marco Gil')">
-            <a href="https://gofund.me/a7e0699f" target="_blank" class="gofundme-icon">
-              <i class="fas fa-heart"></i>
-              <span>¡Donar!</span>
-            </a>
-          </div>
-          
-          <!-- Columna: Textos en español e inglés -->
-          <div class="about-texts">
-            <article class="card">
-              <h3><i class="fas fa-user"></i> Español</h3>
-              <p>Mi nombre es Marco Gil, tengo 26 años y soy el mayor de cuatro hermanos. Soy Técnico Superior en Navegación y Pesca, y actualmente estudio Licenciatura en Informática.</p>
-              <p><strong>Fui diagnosticado con una lesión quística en el ángulo ponto-cerebeloso derecho de mi cerebro</strong>, lo que requiere una cirugía urgente: <em>craniectomía suboccipital derecha con durotomía y exéresis del LOE</em>.</p>
-              <p>Mi sueño es poder continuar con mis estudios y tener una vida normal. Tu ayuda puede hacer la diferencia.</p>
-            </article>
+      <i class="fas fa-money"></i><span>AYUDAR!</span>
+    </button>
+  </span></h2>
+  
+  <!-- Contenedor con imagen a un lado y texto al otro -->
+  <div class="about-layout">
+    <!-- Columna: Imagen -->
+    <div class="about-image">
+      <img src="gofundme.jpg" alt="Marco Gil" onclick="openModal(this.src, 'Marco Gil')" style="width: auto; height: auto; max-width: 100%;">
+      <a href="https://gofund.me/a7e0699f" target="_blank" class="gofundme-icon">
+        <i class="fas fa-heart"></i>
+        <span>¡Donar!</span>
+      </a>
+    </div>
+    
+    <!-- Columna: Textos en español e inglés -->
+    <div class="about-texts">
+      <article class="card">
+        <h3><i class="fas fa-user"></i> Español</h3>
+        <p>Mi nombre es Marco Gil, tengo 26 años y soy el mayor de cuatro hermanos. Soy Técnico Superior en Navegación y Pesca, y actualmente estudio Licenciatura en Informática.</p>
+        <p><strong>Fui diagnosticado con una lesión quística en el ángulo ponto-cerebeloso derecho de mi cerebro</strong>, lo que requiere una cirugía urgente: <em>craniectomía suboccipital derecha con durotomía y exéresis del LOE</em>.</p>
+        <p>Mi sueño es poder continuar con mis estudios y tener una vida normal. Tu ayuda puede hacer la diferencia.</p>
+      </article>
 
-            <article class="card">
-              <h3><i class="fas fa-globe"></i> English</h3>
-              <p>My name is Marco Gil. I am 26 years old and the eldest of four siblings. I hold a Higher Technical Diploma in Navigation and Fishing, and I am currently pursuing a Bachelor's Degree in Computer Science.</p>
-              <p><strong>I was diagnosed with a cystic lesion in the right pontocerebellar angle of my brain</strong>, which requires urgent surgery: <em>right suboccipital craniectomy with duraplasty and excision of the space-occupying lesion</em>.</p>
-              <p>My dream is to continue my studies and have a normal life. Your help can make all the difference.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+      <article class="card">
+        <h3><i class="fas fa-globe"></i> English</h3>
+        <p>My name is Marco Gil. I am 26 years old and the eldest of four siblings. I hold a Higher Technical Diploma in Navigation and Fishing, and I am currently pursuing a Bachelor's Degree in Computer Science.</p>
+        <p><strong>I was diagnosed with a cystic lesion in the right pontocerebellar angle of my brain</strong>, which requires urgent surgery: <em>right suboccipital craniectomy with duraplasty and excision of the space-occupying lesion</em>.</p>
+        <p>My dream is to continue my studies and have a normal life. Your help can make all the difference.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
       <!-- GALERÍA -->
       <section class="section">
