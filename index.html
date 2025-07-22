@@ -265,7 +265,6 @@
       <p class="urgent-help">¡Tu ayuda puede salvar mi vida!</p>
     </div>
   </footer>
-<script src="script.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // 1. Desactivar transiciones temporalmente
@@ -283,21 +282,8 @@
       document.querySelector('.nav-btn[data-slide="2"]')?.classList.add('active');
       document.querySelector('.dot[data-index="2"]')?.classList.add('active');
       
-      // 4. Scroll al botón AYUDAR! después de un pequeño delay
-      setTimeout(function() {
-        const helpButton = document.querySelector('.title-with-button .gofundme-icon');
-        if (helpButton) {
-          // Scroll preciso al botón
-          helpButton.scrollIntoView({
-            behavior: 'auto',
-            block: 'center' // Centra verticalmente el botón
-          });
-          
-          // Efecto visual de atención (opcional)
-          helpButton.style.boxShadow = '0 0 0 3px rgba(255,107,107,0.5)';
-          setTimeout(() => helpButton.style.boxShadow = '', 2000);
-        }
-      }, 100);
+      // 4. Scroll al top de la página
+      window.scrollTo(0, 0);
       
       // Restaurar transiciones
       setTimeout(function() {
