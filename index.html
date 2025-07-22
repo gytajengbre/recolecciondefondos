@@ -182,9 +182,15 @@
       <!-- SOBRE MÍ -->
 <section class="section" aria-label="Sobre mí">
   <h2>¡QUIERO TENER UNA <span class="title-with-button">VIDA DIGNA! 
-    <button onclick="document.getElementById('donaciones').scrollIntoView({ behavior: 'smooth' })" class="gofundme-icon">
-      <i class="fas fa-money"></i><span>AYUDAR!</span>
-    </button>
+    <button onclick="document.querySelector('#donaciones').scrollIntoView({behavior: 'smooth'})" class="gofundme-icon">
+    <i class="fas fa-money"></i><span>AYUDAR!</span>
+</button>
+
+<!-- Y asegúrate de que tu sección de donaciones tenga exactamente este formato: -->
+<section id="donaciones">
+    <h2>DONACIONES</h2>
+    <!-- Tu contenido de donaciones aquí -->
+</section>
   </span></h2>
 
         <!-- Contenedor con imagen a un lado y texto al otro -->
