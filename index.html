@@ -266,31 +266,75 @@
     </div>
   </footer>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+// Función mejorada para hacer scroll a la sección de donaciones
+function scrollToDonaciones() {
+    const donacionesSection = document.getElementById('donaciones');
+    
+    if (donacionesSection) {
+        // Opción 1: Usando scrollIntoView (más compatible)
+        donacionesSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+        
+        // Opcional: Agregar un pequeño offset desde la parte superior
+        // setTimeout(() => {
+        //     window.scrollBy(0, -50); // Ajusta este valor según necesites
+        // }, 500);
+    } else {
+        console.error('No se encontró la sección con id "donaciones"');
+        alert('Error: No se puede encontrar la sección de donaciones');
+    }
+}
+
+// Función alternativa usando scrollTo (si prefieres mayor control)
+function scrollToDonacionesAlternativa() {
+    const donacionesSection = document.getElementById('donaciones');
+    
+    if (donacionesSection) {
+        const elementPosition = donacionesSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - 50; // 50px de offset
+        
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Event listener para cuando el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
     // 1. Desactivar transiciones temporalmente
     document.body.classList.add('no-transitions');
     
     setTimeout(function() {
-      // 2. Mover carrusel al slide de "Sobre mí" (tercer slide)
-      const carousel = document.querySelector('.carousel');
-      if (carousel) {
-        const slideWidth = document.querySelector('.section').offsetWidth;
-        carousel.style.transform = `translateX(-${slideWidth * 2}px)`;
-      }
-      
-      // 3. Activar elementos de navegación
-      document.querySelector('.nav-btn[data-slide="2"]')?.classList.add('active');
-      document.querySelector('.dot[data-index="2"]')?.classList.add('active');
-      
-      // 4. Scroll al top de la página
-      window.scrollTo(0, 0);
-      
-      // Restaurar transiciones
-      setTimeout(function() {
-        document.body.classList.remove('no-transitions');
-      }, 200);
+        // 2. Mover carrusel al slide de "Sobre mí" (tercer slide)
+        const carousel = document.querySelector('.carousel');
+        if (carousel) {
+            const slideWidth = document.querySelector('.section').offsetWidth;
+            carousel.style.transform = `translateX(-${slideWidth * 2}px)`;
+        }
+        
+        // 3. Activar elementos de navegación
+        const navBtn = document.querySelector('.nav-btn[data-slide="2"]');
+        if (navBtn) {
+            navBtn.classList.add('active');
+        }
+        
+        const dot = document.querySelector('.dot[data-index="2"]');
+        if (dot) {
+            dot.classList.add('active');
+        }
+        
+        // 4. Scroll al top de la página
+        window.scrollTo(0, 0);
+        
+        // Restaurar transiciones
+        setTimeout(function() {
+            document.body.classList.remove('no-transitions');
+        }, 200);
     }, 50);
-  });
+});
 </script>
 
 </body>
